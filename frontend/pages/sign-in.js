@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import SignIn from '../components/SignIn';
+import Head from "next/head";
+import SignIn from "../src/components/SignIn";
 
 function SignInPage() {
   return (

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Mont';
-  src: url('/fonts/Mont-Heavy.otf');
+  font-family: "Mont";
+  src: url("/fonts/Mont-Heavy.otf");
 }
 
 .logo {
@@ -8,27 +8,34 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
-  background-color: #15202B;
+  background-color: #15202b;
+  flex-wrap: wrap;
 }
 
 .leftSection {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   width: 23vw;
   padding: 25px 0px 25px 50px;
 }
 
+.mainContent {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+}
+
 .middleSection {
-  height: 100vh;
+  min-height: 100vh;
   width: 45vw;
   border: rgba(114, 131, 148, 0.455) solid;
   border-width: 0px 1px 0px 1px;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .middleSection::-webkit-scrollbar {
@@ -37,7 +44,7 @@
 }
 
 .rightSection {
-  height: 100vh;
+  min-height: 100vh;
   width: 32vw;
 }
 
@@ -60,7 +67,7 @@
 .name {
   margin-right: 5px;
   font-size: 15px;
-  font-family: 'Mont';
+  font-family: "Mont";
   margin-bottom: 0;
 }
 
@@ -132,7 +139,7 @@
   width: 90px;
   margin-left: 15px;
   margin-bottom: 15px;
-  background-color: #409BF1;
+  background-color: #409bf1;
   border: none;
   border-radius: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -142,4 +149,74 @@
 
 .button:hover {
   background-color: #3384cf;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+    width: 70vw;
+  }
+
+  .middleSection {
+    width: 100%;
+    min-height: 50vh;
+    border-width: 0px 0px 1px 1px;
+  }
+
+  .rightSection {
+    width: 100%;
+    min-height: auto;
+    border-left: 1px solid rgba(114, 131, 148, 0.455);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .leftSection {
+    width: 100%;
+    min-height: auto;
+    padding: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .middleSection {
+    border-width: 1px 0px 1px 0px;
+  }
+
+  .rightSection {
+    border-left: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftSection {
+    padding: 10px;
+  }
+
+  .name,
+  .username {
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .input {
+    width: 95%;
+  }
+
+  .validateTweet {
+    width: 95%;
+  }
 }

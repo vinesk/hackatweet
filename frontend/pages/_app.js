@@ -1,28 +1,29 @@
-import 'antd/dist/antd.css';
-import '../styles/globals.css';
-import Head from 'next/head';
+import "antd/dist/antd.css";
+import "../src/styles/globals.css";
+import Head from "next/head";
 
 // redux imports
-import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import user from '../reducers/user';
-import tweets from '../reducers/tweets';
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import user from "../src/reducers/user";
+import tweets from "../src/reducers/tweets";
 
 // redux-persist imports
-import { persistStore, persistReducer } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
-import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import storage from "redux-persist/lib/storage";
 
 const reducers = combineReducers({ user, tweets });
 const persistConfig = {
-  key: 'hackatweet',
+  key: "hackatweet",
   storage,
-  blacklist: ['tweets'], // Prevents tweets to be stored in local storage
+  blacklist: ["tweets"], // Prevents tweets to be stored in local storage
 };
 
 const store = configureStore({
   reducer: persistReducer(persistConfig, reducers),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
 
 const persistor = persistStore(store);

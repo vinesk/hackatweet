@@ -1,4 +1,4 @@
-![Hack a Tweet Logo](public/hackatweet.png)
+![Hack a Tweet Logo](frontend/public/hackatweet.png)
 
 # Hack a Tweet
 
@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-Visit the live application at: [https://lacapsule-hackatweet-frontend.vercel.app](https://lacapsule-hackatweet-frontend.vercel.app)
+Visit the live application at: [https://hackatweet-vinesk.vercel.app](https://hackatweet-vinesk.vercel.app)
 
 ## Features
 
@@ -24,65 +24,54 @@ Visit the live application at: [https://lacapsule-hackatweet-frontend.vercel.app
 **Backend**: Node.js, Express, MongoDB  
 **Deployment**: Vercel
 
-## Repositories
+## Project Structure
 
-- **Frontend**: [lacapsule-hackatweet-frontend](https://github.com/vinesk/lacapsule-hackatweet-frontend)
-- **Backend**: [lacapsule-hackatweet-backend](https://github.com/vinesk/lacapsule-hackatweet-backend)
+```
+hackatweet/
+├── frontend/          # Next.js frontend
+├── backend/           # Express backend
+└── package.json       # Root package.json with workspaces
+```
 
 ## Setup
 
-### Frontend
-
-1. Clone the frontend repo:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/vinesk/lacapsule-hackatweet-frontend.git
-   cd lacapsule-hackatweet-frontend
+   git clone https://github.com/vinesk/hackatweet.git
+   cd hackatweet
    ```
 
-2. Install frontend dependencies:
+2. Install dependencies:
 
    ```bash
-   npm install
+   yarn install
    ```
 
-3. Create a `.env.local` file with the following:
+3. Set up environment variables:
+
+   Frontend (.env.local in frontend folder):
 
    ```bash
    NEXT_PUBLIC_BACKEND_URL=https://your-backend-url
    ```
 
-4. Start the frontend:
-
-   ```bash
-   npm run dev
-   ```
-
-### Backend
-
-1. Clone the backend repo:
-
-   ```bash
-   git clone https://github.com/vinesk/lacapsule-hackatweet-backend.git
-   cd lacapsule-hackatweet-backend
-   ```
-
-2. Install backend dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Create a `.env` file with the following:
+   Backend (.env in backend folder):
 
    ```bash
    CONNECTION_STRING=your-mongodb-uri
+   FRONTEND_URL="http://your-frontend-url"
    ```
 
-4. Start the backend:
+4. Start development servers:
 
    ```bash
-   npm run start
+   # Start both frontend and backend
+   yarn dev
+
+   # Or start them separately
+   yarn workspace frontend dev
+   yarn workspace backend start
    ```
 
 ## Usage
@@ -92,6 +81,11 @@ Visit the live application at: [https://lacapsule-hackatweet-frontend.vercel.app
 - **Interact**: Like tweets, delete your own tweets.
 - **Hashtags**: Click on trending hashtags to view related tweets.
 - **Search**: Use the search bar on hashtag pages to find specific hashtags.
+
+## Development
+
+- Frontend runs on: `http://localhost:3001`
+- Backend runs on: `http://localhost:3000`
 
 ## License
 

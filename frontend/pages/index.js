@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import Home from '../components/Home';
+import Head from "next/head";
+import Home from "../src/components/Home";
 
 function Index() {
   return (

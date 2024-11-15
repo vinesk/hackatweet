@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Heavy.otf");
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.leftSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 40vw;
+  background-image: url("https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png");
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.rightSection {
+  min-height: 100vh;
+  width: 60vw;
+  padding: 30px 60px;
+  background-color: #15202b;
+  font-family: "Mont";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.logo {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.signUp,
+.signIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  border-radius: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+.signUp {
+  margin-bottom: 15px;
+  background-color: #409bf1;
+}
+
+.signIn {
+  border: 1px rgb(114, 131, 148) solid;
+}
+
+.signUp:hover {
+  background-color: #3384cf;
+}
+
+.signIn:hover {
+  background-color: #24374a;
+}
+
+.signUpText {
+  color: white;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 64px;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.rightSection h3 {
+  font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    text-align: center;
+  }
+}

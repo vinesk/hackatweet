@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Hashtag from '../../components/Hashtag';
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Hashtag from "../../src/components/Hashtag";
 
 function HashtagPage() {
   const router = useRouter();
